@@ -1,0 +1,32 @@
+<header>
+    <div class="logo_container">
+        <a href="#"><img src="\assets\images\myntra_logo.webp" alt="myntra_logo" class="myntra_home"></a>
+    </div>
+    <nav class="nav_bar">
+        <a routerLink="mens">Men</a>
+        <a href="#">Women</a>
+        <a href="#">kids</a>
+        <a href="#">Home & Living</a>
+        <a href="#">Beauty</a> 
+        <a href="#">Studio<sup>New</sup></a>
+    </nav>
+    <div class="search_bar">
+        <span class="material-symbols-outlined search_icon"><fa-icon [icon]="faSearch"></fa-icon></span>
+        <input type="text" class="search_input" placeholder="Search for products, brands & more">
+    </div>
+    <div class="action_bar">
+        <div class="action_container">
+            <span class="material-symbols-outlined"><fa-icon [icon]="faProfile"></fa-icon></span>
+            <span class="action_name">Profile</span>
+        </div>
+        <div class="action_container">
+            <span class="material-symbols-outlined"><fa-icon [icon]="faFav"></fa-icon></span>
+            <span class="action_name">Wishlist</span>
+        </div>
+        <div class="action_container">
+            <span class="material-symbols-outlined" (click)="GoToCart()"><fa-icon [icon]="faShopbag"></fa-icon></span>
+            <span class="action_name">Bag</span>
+            <span id="bag_item_count">0</span>
+        </div>
+    </div>
+</header>
