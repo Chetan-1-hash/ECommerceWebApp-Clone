@@ -1,0 +1,59 @@
+.login-container{
+    width: 75%;
+    margin-left: 12.5%;
+    height: 40vh;
+    /* border: 2px solid rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container .login button{
+    border: none;
+    background-color: white;
+    outline: none;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 1px 0px 8px #6e6d6d;
+}
+.login-container .login .adminbtn:hover{
+    background-color: rgb(243, 241, 241);
+}
+.login-container .loginPanel{
+    height: 35vh;
+    width: 20vw;
+    box-shadow: 1px 0px 8px #6e6d6d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.login-container .loginPanel p{
+    font-size: 20px;
+    font-weight: 700;
+}
+.login-container .loginPanel form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px 0px;
+}
+.login-container .loginPanel form input{
+    margin: 8px 0px;
+    padding: 8px;
+    outline: none;
+}
+.login-container .loginPanel form button{
+    border: none;
+    background-color: white;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+}
+.login-container .loginPanel form button:hover{
+    color: #ff3f6c;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}

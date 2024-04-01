@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart, faUser } from '@fortawesome/free-regular-svg-icons';
-import { faBagShopping, faSearch, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { faBagShopping, faBasketShopping, faCartShopping, faSearch, faShoppingBag, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-headerbar',
@@ -45,6 +45,12 @@ export class HeaderbarComponent {
         bagItemCountElement.style.visibility = 'hidden';
       }
     }
+  }
+
+  GoToAdmin(){
+    localStorage.setItem("OpenAdminData","false");
+    // console.log(localStorage.getItem("OpenAdminData"))
+    this.router.navigate(['/profile'])
   }
 
 }

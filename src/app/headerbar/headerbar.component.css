@@ -12,6 +12,10 @@ header{
 .logo_container{
     margin-left: 4%;
 }
+.logo_container p{
+    margin: 0;
+    font-weight: 700;
+}
 .action_bar{
     margin-right: 4%;
 }

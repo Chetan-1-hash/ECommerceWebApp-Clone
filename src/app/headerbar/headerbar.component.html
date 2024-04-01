@@ -1,6 +1,7 @@
 <header>
     <div class="logo_container">
-        <a href="#"><img src="\assets\images\myntra_logo.webp" alt="myntra_logo" class="myntra_home"></a>
+        <a href="#"><img src="\assets\images\myntra_logo.jpg" alt="myntra_logo" class="myntra_home"></a>
+        <p>Clone App</p>
     </div>
     <nav class="nav_bar">
         <a routerLink="mens">Men</a>
@@ -16,7 +17,7 @@
     </div>
     <div class="action_bar">
         <div class="action_container">
-            <span class="material-symbols-outlined"><fa-icon [icon]="faProfile"></fa-icon></span>
+            <span class="material-symbols-outlined" (click)="GoToAdmin()"><fa-icon [icon]="faProfile"></fa-icon></span>
             <span class="action_name">Profile</span>
         </div>
         <div class="action_container">

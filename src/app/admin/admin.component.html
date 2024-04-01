@@ -1,0 +1,16 @@
+<main>
+    <div class="login-container" *ngIf="!OpenAdminData">
+        <div class="login" *ngIf="isBtn">
+            <button class="adminbtn" (click)="openLoginPanel()">Admin</button>
+        </div>
+        <div class="loginPanel" *ngIf="isPanel">
+            <p>Admin Login</p>
+            <form>
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <button (click)="openAdminData()"><fa-icon [icon]="faSubmit"></fa-icon></button>
+            </form>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,25 @@
+.data-container{
+    width: 100%;
+    /* border: 2px solid rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    width: 50%;
+    /* border: 2px solid yellow; */
+    height: 100%;
+}
+.right{
+    width: 50%;
+    /* border: 2px solid red; */
+}
+.right .bar_chart{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+canvasjs-chart{
+    width: 250px;
+    margin: 8px;
+}
