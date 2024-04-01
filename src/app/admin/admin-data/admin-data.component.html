@@ -1,17 +1,37 @@
 <main>
     <div class="data-container">
         <div class="left">
-            asdf
+            <div class="title" style="text-align: center;"><h2>Feedback Distribution</h2></div>
+            <table>
+                <tr>
+                    <th>Sr no.</th>
+                    <th>Product Id</th>
+                    <th>
+                        <div class="heading-wrapper">
+                            Distribution(Positive/Negative)
+                        </div>
+                    </th>
+                    <th>Choices</th>
+                </tr>
+                <tr *ngFor="let data of fData;let i=index;">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ data.fid }}</td>
+                    <td>{{ data.term }}</td>
+                    <td>{{ data.choice }}</td>
+                </tr>
+            </table>
         </div>
         <div class="right">
             <div class="graph">
                 <div class="bar_chart">
-                    <canvasjs-chart [options]="chartOptions_barchart" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
-                    <canvasjs-chart [options]="chartOptions_Positive_barchart" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
-                    <canvasjs-chart [options]="chartOptions_Negative_barchart" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
+                    <canvasjs-chart [options]="chartOptions_barchart"></canvasjs-chart>
+                    <canvasjs-chart [options]="chartOptions_Positive_barchart"></canvasjs-chart>
+                    <canvasjs-chart [options]="chartOptions_Negative_barchart"></canvasjs-chart>
                 </div>
                 <hr>
-                <canvasjs-chart [options]="chartOptions_Pie" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
+                <div class="pie_chart">
+                    <canvasjs-chart [options]="chartOptions_Pie"></canvasjs-chart>
+                </div>
             </div>
         </div>
     </div>

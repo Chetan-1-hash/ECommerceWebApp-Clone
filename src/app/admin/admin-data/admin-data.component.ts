@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { DataTransferService } from '../../data-transfer.service';
 import { feedbackData } from '../../mens/mens.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-data',
   standalone: true,
-  imports: [CanvasJSAngularChartsModule],
+  imports: [CommonModule, FormsModule, CanvasJSAngularChartsModule],
   templateUrl: './admin-data.component.html',
   styleUrl: './admin-data.component.css'
 })
@@ -20,12 +22,14 @@ export class AdminDataComponent {
     this.df.value.subscribe(data => {
       this.fData = data;
     });
-    this.fData = [
-      { fid: 1, term: 'positive', choice: "color" }, // Sample dummy data
-      { fid: 2, term: 'positive', choice: "comfort" },
-      { fid: 3, term: 'negative', choice: "durability" },
-      { fid: 4, term: 'negative', choice: "size" }
-    ];
+    // this.fData = [
+    //   { fid: 1, term: 'positive', choice: "color" }, // Sample dummy data
+    //   { fid: 2, term: 'positive', choice: "comfort" },
+    //   { fid: 3, term: 'negative', choice: "durability" },
+    //   { fid: 4, term: 'negative', choice: "size" },
+    //   { fid: 5, term: 'negative', choice: "size" },
+    //   { fid: 6, term: 'positive', choice: "comfort" },
+    // ];
     console.log(this.fData);
     this.updateChartData();
   }
@@ -39,7 +43,7 @@ export class AdminDataComponent {
       includeZero: true
     },
     axisX: {
-      title:"Choices",
+      title: "Choices",
       valueFormatString: "#", // Format x-axis values as integers
     },
     data: [{
@@ -75,7 +79,7 @@ export class AdminDataComponent {
       includeZero: true
     },
     axisX: {
-      title:"Choices",
+      title: "Choices",
       valueFormatString: "#", // Format x-axis values as integers
     },
     data: [{
@@ -94,7 +98,7 @@ export class AdminDataComponent {
       includeZero: true
     },
     axisX: {
-      title:"Choices",
+      title: "Choices",
       valueFormatString: "#", // Format x-axis values as integers
     },
     data: [{
@@ -124,29 +128,25 @@ export class AdminDataComponent {
 
   BarChartMapping() {
     // Initialize an object to store the counts for each choice
-    const barChartData: { x: number; label: string; y: number; }[] = [];
-
-    // Create an object to store the counts for each choice
     const choiceCounts: { [key: string]: number } = {};
-    let id = 1; // Start with an initial identifier
 
-    // Count the occurrences of each choice and assign numeric identifiers
+    // Count the occurrences of each choice
     this.fData.forEach(item => {
       const choice = item.choice.toLowerCase();
-      if (!(choice in choiceCounts)) {
-        choiceCounts[choice] = id; // Assign a unique identifier
-        id++;
-      }
-      barChartData.push({
-        x: choiceCounts[choice], // Use the numeric identifier
-        label: choice, // Store the choice label
-        y: (choiceCounts[choice] || 0) // Number of occurrences for the choice
-      });
+      choiceCounts[choice] = (choiceCounts[choice] || 0) + 1;
     });
+
+    // Map the choice counts to bar chart data
+    const barChartData = Object.keys(choiceCounts).map((choice, index) => ({
+      x: index + 1, // Use index + 1 as the x value
+      label: choice, // Store the choice label
+      y: choiceCounts[choice] // Number of occurrences for the choice
+    }));
 
     // Update bar chart data with the choice counts
     this.chartOptions_barchart.data[0].dataPoints = barChartData;
   }
+
 
   PieChartMapping() {
     // Count occurrences of positive and negative feedbacks
@@ -169,7 +169,7 @@ export class AdminDataComponent {
   }
 
   PositiveBarchartMapping() {
-    const barChartData: { x: number; label: string; y: number; }[] = [];
+    // const barChartData: { x: number; label: string; y: number; }[] = [];
 
     // Create an object to store the counts for each choice
     const choiceCounts: { [key: string]: number } = {};
@@ -181,23 +181,18 @@ export class AdminDataComponent {
     // Count the occurrences of each choice and assign numeric identifiers
     positiveFeedbacks.forEach(item => {
       const choice = item.choice.toLowerCase();
-      if (!(choice in choiceCounts)) {
-        choiceCounts[choice] = id; // Assign a unique identifier
-        id++;
-      }
-      barChartData.push({
-        x: choiceCounts[choice], // Use the numeric identifier
-        label: choice, // Store the choice label
-        y: (choiceCounts[choice] || 0) // Number of occurrences for the choice
-      });
+      choiceCounts[choice] = (choiceCounts[choice] || 0) + 1;
     });
+    const barChartData = Object.keys(choiceCounts).map((choice, index) => ({
+      x: index + 1, // Use index + 1 as the x value
+      label: choice, // Store the choice label
+      y: choiceCounts[choice] // Number of occurrences for the choice
+    }));
 
     this.chartOptions_Positive_barchart.data[0].dataPoints = barChartData;
   }
 
   NegativeBarchartMapping() {
-    const barChartData: { x: number; label: string; y: number; }[] = [];
-
     // Create an object to store the counts for each choice
     const choiceCounts: { [key: string]: number } = {};
     let id = 1; // Start with an initial identifier
@@ -208,16 +203,15 @@ export class AdminDataComponent {
     // Count the occurrences of each choice and assign numeric identifiers
     negativeFeedbacks.forEach(item => {
       const choice = item.choice.toLowerCase();
-      if (!(choice in choiceCounts)) {
-        choiceCounts[choice] = id; // Assign a unique identifier
-        id++;
-      }
-      barChartData.push({
-        x: choiceCounts[choice], // Use the numeric identifier
-        label: choice, // Store the choice label
-        y: (choiceCounts[choice] || 0) // Number of occurrences for the choice
-      });
+      choiceCounts[choice] = (choiceCounts[choice] || 0) + 1;
     });
+
+    // Map the choice counts to bar chart data
+    const barChartData = Object.keys(choiceCounts).map((choice, index) => ({
+      x: index + 1, // Use index + 1 as the x value
+      label: choice, // Store the choice label
+      y: choiceCounts[choice] // Number of occurrences for the choice
+    }));
 
     this.chartOptions_Negative_barchart.data[0].dataPoints = barChartData;
   }

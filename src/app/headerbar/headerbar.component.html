@@ -16,16 +16,16 @@
         <input type="text" class="search_input" placeholder="Search for products, brands & more">
     </div>
     <div class="action_bar">
-        <div class="action_container">
-            <span class="material-symbols-outlined" (click)="GoToAdmin()"><fa-icon [icon]="faProfile"></fa-icon></span>
+        <div class="action_container" (click)="GoToAdmin()">
+            <span class="material-symbols-outlined" ><fa-icon [icon]="faProfile"></fa-icon></span>
             <span class="action_name">Profile</span>
         </div>
         <div class="action_container">
             <span class="material-symbols-outlined"><fa-icon [icon]="faFav"></fa-icon></span>
             <span class="action_name">Wishlist</span>
         </div>
-        <div class="action_container">
-            <span class="material-symbols-outlined" (click)="GoToCart()"><fa-icon [icon]="faShopbag"></fa-icon></span>
+        <div class="action_container" (click)="GoToCart()">
+            <span class="material-symbols-outlined"><fa-icon [icon]="faShopbag"></fa-icon></span>
             <span class="action_name">Bag</span>
             <span id="bag_item_count">0</span>
         </div>

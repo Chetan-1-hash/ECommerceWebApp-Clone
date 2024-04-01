@@ -18,46 +18,46 @@
                     <div class="modal-body" id="body-feedback">
                         <div class="feedback" id="feedbackModal_{{item.id}}">
                             <div class="term" *ngIf="isTerm">
-                                <div class="options">
-                                    <fa-icon [icon]="faPositive" (click)="isPositive = true; isTerm=false;"></fa-icon>
+                                <div class="options" (click)="isPositive = true; isTerm=false;">
+                                    <fa-icon [icon]="faPositive"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faNegative" (click)="isNegative = true; isTerm=false;"></fa-icon>
+                                <div class="options" (click)="isNegative = true; isTerm=false;">
+                                    <fa-icon [icon]="faNegative"></fa-icon>
                                 </div>
                             </div>
                             <!-- choice values are color, size comfort,durability, style -->
                             <div class="P_N" *ngIf="isPositive">
-                                <div class="options">
-                                    <fa-icon [icon]="faColor" (click)="customer_feedback(item.id,'positive','color')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'positive','color')">
+                                    <fa-icon [icon]="faColor"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faSize" (click)="customer_feedback(item.id,'positive','size')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'positive','size')">
+                                    <fa-icon [icon]="faSize"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faComfort" (click)="customer_feedback(item.id,'positive','comfort')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'positive','comfort')">
+                                    <fa-icon [icon]="faComfort"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faDurability" (click)="customer_feedback(item.id,'positive','durability')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'positive','durability')">
+                                    <fa-icon [icon]="faDurability"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faStyle" (click)="customer_feedback(item.id,'positive','style')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'positive','style')">
+                                    <fa-icon [icon]="faStyle"></fa-icon>
                                 </div>
                             </div>
                             <div class="P_N" *ngIf="isNegative">
-                                <div class="options">
-                                    <fa-icon [icon]="faColor" (click)="customer_feedback(item.id,'negative','color')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'negative','color')">
+                                    <fa-icon [icon]="faColor"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faSize" (click)="customer_feedback(item.id,'negative','size')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'negative','size')">
+                                    <fa-icon [icon]="faSize"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faComfort" (click)="customer_feedback(item.id,'negative','comfort')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'negative','comfort')">
+                                    <fa-icon [icon]="faComfort"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faDurability" (click)="customer_feedback(item.id,'negative','durability')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'negative','durability')">
+                                    <fa-icon [icon]="faDurability"></fa-icon>
                                 </div>
-                                <div class="options">
-                                    <fa-icon [icon]="faStyle" (click)="customer_feedback(item.id,'negative','style')"></fa-icon>
+                                <div class="options" (click)="customer_feedback(item.id,'negative','style')">
+                                    <fa-icon [icon]="faStyle"></fa-icon>
                                 </div>
                             </div>
                         </div>
